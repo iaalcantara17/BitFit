@@ -31,13 +31,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="./BitFit.gif" title="Video Walkthrough" width="300" alt="Video Walkthrough" />
 
 GIF created with ScreenToGif
 
 ## Notes
 
-Implementing the Room migration and ensuring the UI updated reactively with Flow were the main challenges. Integrating the photo picker with Glide also required careful handling of URIs.
+Implementing the Room migration and ensuring the UI was updated reactively with Flow were the main challenges. Integrating the photo picker with Glide also required careful handling of URIs.
 
 ## License
 
