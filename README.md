@@ -1,31 +1,32 @@
-# Android Project 5 - BitFit
+# Android Project 6 - BitFit Part 2
 
 Submitted by: **Israel Alcantara**
 
-**BitFit** is a health metrics app that allows users to track their daily sleep, mood, and notes with persistent storage and data visualization.
+**BitFit** is a health metrics app that allows users to track their daily sleep hours, morning feeling (1-10), notes, and photos with persistent storage, summary statistics, trend graphs, and daily reminder notifications.
 
-Time spent: **5** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **At least one health metric is tracked (based on user input)**
-  - Chosen metric(s): `Sleep Hours`, `Morning Feeling (1-10)`
-- [x] **There is a "create entry" UI that prompts users to make their daily entry**
-- [x] **New entries are saved in a database and then updated in the RecyclerView**
-- [x] **On application restart, previously entered entries are preserved (i.e., are *persistent*)**
- 
+- [x] **Use at least 2 Fragments**
+- [x] **Create a new dashboard fragment where users can see a summary of their entered data**
+- [x] **Use one of the Navigation UI Views (BottomNavigation, Drawer Layout, Top Bar) to move between the fragments**
+
 The following **optional** features are implemented:
 
-- [x] **Create a UI for tracking averages and trends in metrics**
-- [x] **Improve and customize the user interface through styling and coloring**
-- [x] **Implement orientation responsivity**
-- [x] **Add a daily photo feature**
+- [x] **Add a more advanced UI (e.g: Graphing) for tracking trends in metrics**
+- [x] **Implement daily notifications to prompt users to fill in their data**
 
 The following **additional** features are implemented:
 
-- [x] Custom green theme and dashboard card for quick insights.
+- [x] MPAndroidChart LineChart for sleep trend visualization
+- [x] MPAndroidChart BarChart for feeling trend visualization
+- [x] Daily photo attachment with Glide rendering
+- [x] Boot-persistent notification scheduling via BroadcastReceiver
+- [x] Material Design cards on the Dashboard for a polished look
+- [x] Empty state messaging when no entries exist yet
 
 ## Video Walkthrough
 
@@ -37,11 +38,11 @@ GIF created with ScreenToGif
 
 ## Notes
 
-Implementing the Room migration and ensuring the UI was updated reactively with Flow were the main challenges. Integrating the photo picker with Glide also required careful handling of URIs.
+The main challenge was migrating the entry form and RecyclerView logic from MainActivity into LogFragment, making sure the photo picker (registerForActivityResult) was registered in onCreate() of the fragment rather than onViewCreated(). Setting up the navigation graph and ensuring the menu item IDs exactly matched the fragment IDs in nav_graph.xml was also a key detail. Integrating MPAndroidChart required adding the JitPack repository to settings.gradle.kts.
 
 ## License
 
-    Copyright 2024 Israel Alcantara
+    Copyright 2026 Israel Alcantara
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
