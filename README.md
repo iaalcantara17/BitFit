@@ -1,57 +1,30 @@
-# Android Project 6 - BitFit Part 2
+# BitFit
 
-Submitted by: **Israel Alcantara**
+A small Android app for logging how much you slept and how you felt each morning. I built it for CodePath's Android course.
 
-**BitFit** is a health metrics app that allows users to track their daily sleep hours, morning feeling (1-10), notes, and photos with persistent storage, summary statistics, trend graphs, and daily reminder notifications.
+## What it does
 
-Time spent: **4** hours spent in total
+The app is one screen:
 
-## Required Features
+- A sleep slider from 0 to 24 hours in half-hour steps, and a feeling slider from 0 to 10.
+- An optional notes field and an optional photo picked from the device.
+- A Save button that stores the entry with today's date.
+- A summary card with your average hours of sleep and average feeling across all entries.
+- A list of past entries, newest first, showing the date, notes, hours slept, feeling, and the photo if there is one.
 
-The following **required** functionality is completed:
+Entries are saved in a local Room (SQLite) database, so they stay after the app is closed. The list and the averages update on their own whenever a new entry is saved.
 
-- [x] **Use at least 2 Fragments**
-- [x] **Create a new dashboard fragment where users can see a summary of their entered data**
-- [x] **Use one of the Navigation UI Views (BottomNavigation, Drawer Layout, Top Bar) to move between the fragments**
+## Tech stack
 
-The following **optional** features are implemented:
+Kotlin, Android SDK (min SDK 24), Room with Kotlin coroutines and Flow, RecyclerView, Material sliders, Glide for photos.
 
-- [x] **Add a more advanced UI (e.g: Graphing) for tracking trends in metrics**
-- [x] **Implement daily notifications to prompt users to fill in their data**
+## How to run it
 
-The following **additional** features are implemented:
+1. Clone the repo and open it in Android Studio.
+2. Let Gradle sync, then run the `app` configuration on an emulator or a device.
 
-- [x] MPAndroidChart LineChart for sleep trend visualization
-- [x] MPAndroidChart BarChart for feeling trend visualization
-- [x] Daily photo attachment with Glide rendering
-- [x] Boot-persistent notification scheduling via BroadcastReceiver
-- [x] Material Design cards on the Dashboard for a polished look
-- [x] Empty state messaging when no entries exist yet
+No API keys are needed.
 
-## Video Walkthrough
+## Status
 
-Here's a walkthrough of implemented user stories:
-
-<img src="./BitFit.gif" title="Video Walkthrough" width="300" alt="Video Walkthrough" />
-
-GIF created with ScreenToGif
-
-## Notes
-
-The main challenge was migrating the entry form and RecyclerView logic from MainActivity into LogFragment, making sure the photo picker (registerForActivityResult) was registered in onCreate() of the fragment rather than onViewCreated(). Setting up the navigation graph and ensuring the menu item IDs exactly matched the fragment IDs in nav_graph.xml was also a key detail. Integrating MPAndroidChart required adding the JitPack repository to settings.gradle.kts.
-
-## License
-
-    Copyright 2026 Israel Alcantara
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+This is a course project. The repo also has a second entry screen (`DetailActivity`) that's declared in the manifest, but nothing in the app opens it.
